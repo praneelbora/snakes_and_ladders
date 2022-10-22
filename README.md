@@ -1,2 +1,3 @@
 # snakes_and_ladders
-## In Process of making a snakes and ladder game in python using the pygame module
+## A snakes and ladder game in python using the pygame module
+### In the making
