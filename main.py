@@ -5,10 +5,12 @@ WIDTH, HEIGHT = 700,700
 BG = (255,255,255)
 BLACK=(0,0,0)
 FPS=4
+
 GAME = pygame.display.set_mode((WIDTH,HEIGHT))
 BACK = pygame.image.load("Assets/img2.jpeg")
 BACK = pygame.transform.scale(BACK,(WIDTH,HEIGHT))
 NEXT_TURN=pygame.USEREVENT +1
+
 GOTI_B = pygame.image.load("Assets/goti_blue.png")
 GOTI_B = pygame.transform.scale(GOTI_B,(50,50))
 GOTI_G = pygame.image.load("Assets/goti_green.png")
@@ -26,6 +28,7 @@ gotis=[]
 # move[i][0] helps in adding or subtracting values of goti.x
 # move[i][1] helps stopping goti at 100 position
 # move[i][2] says how many steps to be taken by that goti
+
 def draw():
     GAME.blit(BACK,(0,0))
     for i in range(len(gotis)):
@@ -141,9 +144,13 @@ def check_snakes(goti,move):
             goti.x-=(70*1)
             move[1]=79
 winner=[]
+
 wins=["BLUE","GREEN","RED","YELLOW"]
+
 def main():
     num=int(input("Number of players (1 to 4): "))
+    print("Press Space to play for each player one by one")
+    clock.tick(0)
     for i in range(num):
         gotis.append(pygame.Rect(-60,640,50,50))
         move.append([1,0,1])
