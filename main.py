@@ -1,23 +1,23 @@
 import pygame
 import random
-import time 
+
 WIDTH, HEIGHT = 700,700
 BG = (255,255,255)
 BLACK=(0,0,0)
-FPS=4
+FPS=1
 
 GAME = pygame.display.set_mode((WIDTH,HEIGHT))
-BACK = pygame.image.load("Assets/img2.jpeg")
+BACK = pygame.image.load("Assets/Boards/img2.jpeg")
 BACK = pygame.transform.scale(BACK,(WIDTH,HEIGHT))
 NEXT_TURN=pygame.USEREVENT +1
 
-GOTI_B = pygame.image.load("Assets/goti_blue.png")
+GOTI_B = pygame.image.load("Assets/Goti/goti_blue.png")
 GOTI_B = pygame.transform.scale(GOTI_B,(50,50))
-GOTI_G = pygame.image.load("Assets/goti_green.png")
+GOTI_G = pygame.image.load("Assets/Goti/goti_green.png")
 GOTI_G = pygame.transform.scale(GOTI_G,(50,50))
-GOTI_R = pygame.image.load("Assets/goti_red.png")
+GOTI_R = pygame.image.load("Assets/Goti/goti_red.png")
 GOTI_R = pygame.transform.scale(GOTI_R,(50,50))
-GOTI_Y = pygame.image.load("Assets/goti_yellow.png")
+GOTI_Y = pygame.image.load("Assets/Goti/goti_yellow.png")
 GOTI_Y = pygame.transform.scale(GOTI_Y,(50,50))
 GOTIS=[GOTI_B,GOTI_G,GOTI_R,GOTI_Y]
 
@@ -148,9 +148,12 @@ winner=[]
 wins=["BLUE","GREEN","RED","YELLOW"]
 
 def main():
+
     num=int(input("Number of players (1 to 4): "))
     print("Press Space to play for each player one by one")
+    
     clock.tick(0)
+
     for i in range(num):
         gotis.append(pygame.Rect(-60,640,50,50))
         move.append([1,0,1])
